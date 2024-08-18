@@ -13,6 +13,7 @@ public interface TaskRepository extends JpaRepository<Task,Long> {
   //Conceito de Spring Puro - mais usual
   List<Task> findByUser_id(long id);
 
+
   /* Conceito Spring JPQL - Spring e SQL.
   @Query(value = "SELECT t FROM Task t WHERE t.user.id = :id")
   List<Task> findByUser_Id(@Param("id") Long id);
