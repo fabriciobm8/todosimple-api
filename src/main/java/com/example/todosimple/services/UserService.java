@@ -1,11 +1,9 @@
 package com.example.todosimple.services;
 
 import com.example.todosimple.models.User;
-import com.example.todosimple.repositories.TaskRepository;
 import com.example.todosimple.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import java.util.Optional;
-import javax.management.RuntimeErrorException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
