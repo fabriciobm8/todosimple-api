@@ -5,6 +5,7 @@ import com.example.todosimple.models.User;
 import com.example.todosimple.repositories.TaskRepository;
 import com.example.todosimple.repositories.UserRepository;
 import jakarta.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,12 @@ public class TaskService {
     return task.orElseThrow(() -> new RuntimeException(
         "Tarefa Não Encontrada! Id: " + id + ", Tipo: " + Task.class.getName() ));
   }
+
+  public List<Task> findAllByUserId (Long userId) {
+    List<Task> tasks = this.taskRepository.findByUser_id(userId);
+    return tasks;
+  }
+
   @Transactional
   public Task create (Task obj) {
     User user = this.userService.findById(obj.getUser().getId());
