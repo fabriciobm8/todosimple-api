@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface TaskRepository extends JpaRepository<Task,Long> {
 
   //Conceito de Spring Puro - mais usual
-  List<Task> findByUser_id(long id);
+  List<Task> findByUser_Id(long id);
 
 
   /* Conceito Spring JPQL - Spring e SQL.

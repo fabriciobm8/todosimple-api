@@ -26,7 +26,8 @@ public class TaskService {
   }
 
   public List<Task> findAllByUserId (Long userId) {
-    List<Task> tasks = this.taskRepository.findByUser_id(userId);
+    userService.findById(userId);
+    List<Task> tasks = this.taskRepository.findByUser_Id(userId);
     return tasks;
   }
 
